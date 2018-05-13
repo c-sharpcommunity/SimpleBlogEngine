@@ -17,7 +17,6 @@ using SimpleBlogEngine.Services;
 namespace SimpleBlogEngine.Controllers
 {
     [Authorize]
-    [Route("[controller]/[action]")]
     public class AccountController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;
@@ -455,7 +454,7 @@ namespace SimpleBlogEngine.Controllers
             }
             else
             {
-                return RedirectToAction(nameof(HomeController.Index), "Home");
+                return RedirectToAction(nameof(PostController.Index), "Post");
             }
         }
 
